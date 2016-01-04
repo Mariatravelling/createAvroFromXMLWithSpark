@@ -190,31 +190,6 @@ object readingXML extends App{
     .setYear(year).build()
   println(article.getPrintSection)
   val avroSchema=Article.SCHEMA$
-  /*println(article.getAbstract$)
-  println(article.getAlternateURL)
-  println(article.getBanner)
-  println(article.getColumnName)
-  println(article.getColumnNumber)
-  println(article.getContent)
-  println(article.getCorrectionDate)
-  println(article.getDayOfMonth)
-  println(article.getDayOfWeek)
-  println(article.getDsk)
-  println(article.getFeaturePage)
-  println(article.getHeadline)
-  println(article.getLeadParagraph)
-  println(article.getMonth)
-  println(article.getOnlineSection)
-  println(article.getOnlineTitles)
-  println(article.getPrintSection)
-  println(article.getPrintPageNumber)
-  println(article.getSentences)
-  println(article.getSeriesName)
-  println(article.getSlug)
-  //println(article.getTitles)
-  println(article.getUrl)
-  println(article.getYear)
-  println(article.getClass)*/
 
   val userDatumWriter: DatumWriter[Article]  = new SpecificDatumWriter[Article]
   val dataFileWriter: DataFileWriter[Article]  = new DataFileWriter[Article](userDatumWriter)
@@ -222,8 +197,5 @@ object readingXML extends App{
   dataFileWriter.create(Article.getClassSchema, new File("Article.avro"))
   dataFileWriter.append(article)
   dataFileWriter.close()
- // println(article)
-
-
 
 }
