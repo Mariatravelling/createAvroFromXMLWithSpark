@@ -17,7 +17,7 @@ import scala.xml.XML
 /**
   * Created by wangzehui on 10/27/15.
   */
-object readingXML extends App{
+object createAvro extends App{
   val conf=new SparkConf().setAppName("readingXML")
   conf.setMaster("local[*]")
   val sc=new SparkContext(conf)

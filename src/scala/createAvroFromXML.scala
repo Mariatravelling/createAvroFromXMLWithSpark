@@ -153,7 +153,7 @@ object createAvroFromXML extends App {
     columnNumber,banner,correctionDate,featurePage,columnName,seriesName,dayOfMonth,month,year,dayOfWeek,headline,content,sentence)))
   val out=sqlContext.createDataFrame(result).toDF("abstract","leadParagraph","url","titles","dsk","onlineSection",
     "printPageNumber","printSection","slug","columnNumber","banner","correctionDate","featurePage","columnName","seriesName","dayOfMonth","month","year","dayOfWeek","headline","content","sentences")
-  out.repartition(1).write.json("test6.json")
-  out.repartition(1).write.avro("test6.avro")
+  out.repartition(1).write.json("test.json")
+  out.repartition(1).write.avro("test.avro")
 
 }
